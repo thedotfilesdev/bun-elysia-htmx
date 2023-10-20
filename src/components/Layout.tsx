@@ -10,30 +10,30 @@ const Layout = ({ title, children }: { title: string, children: JSX.Element }) =
 
         <link rel="stylesheet" href="/public/tailwind.css" />
       </head>
-      <body className="h-full">
-        <main className="max-w-screen-md mx-auto flex flex-col gap-8">
-          <div className="w-full max-w-screen-md mx-auto">
-            <header className="w-full flex items-center p-8" hx-boost="true">
+      <body class="h-full bg-zinc-900 text-gray-50">
+        <main class="max-w-screen-md mx-auto flex flex-col gap-8">
+          <div class="w-full max-w-screen-md mx-auto">
+            <header class="w-full flex items-center p-8" hx-boost="true">
               <h1>
-                <a href="/" className="btn btn-secondary btn-outline">
+                <a href="/" class="btn btn-secondary btn-outline">
                   Hello Bun!
                 </a>
               </h1>
-              <nav className="ml-auto">
-                <a href="/about" className="btn btn-ghost">
+              <nav class="ml-auto">
+                <a href="/about" class="btn btn-ghost">
                   About
                 </a>
               </nav>
             </header>
           </div>
           <section>{children}</section>
-          <footer className="text-center mt-auto p-12 text-sm text-base-content/60">
+          <footer class="text-center mt-auto p-12 text-sm text-base-content/60">
             <p>
               <em>
                 Built with{" "}
                 <a
                   href="https://bun.sh"
-                  className="link"
+                  class="link"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -42,7 +42,7 @@ const Layout = ({ title, children }: { title: string, children: JSX.Element }) =
                 ,{" "}
                 <a
                   href="https://tailwindcss.com"
-                  className="link"
+                  class="link"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -51,7 +51,7 @@ const Layout = ({ title, children }: { title: string, children: JSX.Element }) =
                 and{" "}
                 <a
                   href="https://daisyui.com"
-                  className="link"
+                  class="link"
                   target="_blank"
                   rel="noreferrer"
                 >
