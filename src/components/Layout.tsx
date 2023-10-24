@@ -10,7 +10,7 @@ const Layout = ({ title, children }: { title: string, children: JSX.Element }) =
 
         <link rel="stylesheet" href="/public/tailwind.css" />
       </head>
-      <body class="h-full bg-zinc-900 text-gray-50">
+      <body class="h-full">
         <main class="max-w-screen-md mx-auto flex flex-col gap-8">
           <div class="w-full max-w-screen-md mx-auto">
             <header class="w-full flex items-center p-8" hx-boost="true">
@@ -28,37 +28,7 @@ const Layout = ({ title, children }: { title: string, children: JSX.Element }) =
           </div>
           <section>{children}</section>
           <footer class="text-center mt-auto p-12 text-sm text-base-content/60">
-            <p>
-              <em>
-                Built with{" "}
-                <a
-                  href="https://bun.sh"
-                  class="link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Bun
-                </a>
-                ,{" "}
-                <a
-                  href="https://tailwindcss.com"
-                  class="link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  TailwindCSS
-                </a>{" "}
-                and{" "}
-                <a
-                  href="https://daisyui.com"
-                  class="link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  DaisyUI
-                </a>
-              </em>
-            </p>
+            {/* TODO: add footer */}
           </footer>
         </main>
       </body>

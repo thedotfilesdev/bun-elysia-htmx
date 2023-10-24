@@ -24,25 +24,20 @@ export function HomePage() {
         </nav>
 
         <section class="max-w-md mx-auto flex flex-col gap-4 p-8">
-          <h2 class="uppercase text-xl">
-            <strong>HTMX</strong>
-          </h2>
-          <p class="text-sm text-base-content/80">
-            <em>
-              The "About" link above and the top menu uses{" "}
-              <code class="text-accent">hx-boost="true"</code> to do
-              client-side navigation.
-            </em>
-          </p>
-          <p class="text-sm text-base-content/80">
-            <em>
-              The <code class="text-accent">&lt;CurrentTime /&gt;</code>{" "}
-              component below uses{" "}
-              <code class="text-accent">hx-trigger="load"</code> to fetch
-              the current time from the server and display it (with a simulated
-              delay on initial load).
-            </em>
-          </p>
+          <form hx-post="/todo" hx-target="#todos">
+            <fieldset class="flex flex-col pb-4">
+              <label class="label">
+                <span class="label-text">What is your name?</span>
+              </label>
+              <input type="text" name="todo" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+            </fieldset>
+
+            <button type="submit" class="btn">Submit</button>
+
+            {/* <img id="indicator" class="htmx-indicator" src="/loading.gif" /> */}
+          </form>
+
+          <section id="todos" hx-get="/todos" hx-trigger="load"></section>
         </section>
       </div>
     </Layout>
