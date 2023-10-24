@@ -7,7 +7,10 @@
     "dev:server": "bun run --watch src/index.ts",
     "start": "bun run build/index.js",
     "build:server": "bun build --target=bun ./src/index.tsx --outfile=build/index.js",
-    "build:tailwind": "tailwindcss -i ./src/tailwind.css -o ./public/tailwind.css"
+    "build:tailwind": "tailwindcss -i ./src/tailwind.css -o ./public/tailwind.css",
+    "db:generate": "drizzle-kit generate:sqlite --out ./src/drizzle/migrations --breakpoints --schema=./src/drizzle/schema.ts",
+    "db:migrate": "bun run src/drizzle/migrate.ts",
+    "studio": "drizzle-kit studio --port 3333"
   },
   "dependencies": {
     "@elysiajs/html": "^0.7.3",
@@ -15,10 +18,15 @@
     "elysia": "latest"
   },
   "devDependencies": {
+    "@libsql/client": "^0.3.6",
+    "@paralleldrive/cuid2": "^2.2.2",
     "@tailwindcss/typography": "^0.5.10",
     "bun-types": "latest",
     "daisyui": "^3.9.3",
-    "tailwindcss": "^3.3.3"
+    "drizzle-kit": "^0.19.13",
+    "drizzle-orm": "^0.28.6",
+    "tailwindcss": "^3.3.3",
+    "zod": "^3.22.4"
   },
   "module": "src/index.js"
 }
