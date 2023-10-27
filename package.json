@@ -8,9 +8,10 @@
     "start": "bun run build/index.js",
     "build:server": "bun build --target=bun ./src/index.tsx --outfile=build/index.js",
     "build:tailwind": "tailwindcss -i ./src/tailwind.css -o ./public/tailwind.css",
-    "db:generate": "drizzle-kit generate:sqlite --out ./src/drizzle/migrations --breakpoints --schema=./src/drizzle/schema.ts",
-    "db:migrate": "bun run src/drizzle/migrate.ts",
-    "studio": "drizzle-kit studio --port 3333"
+    "db:generate": "drizzle-kit generate:sqlite --out ./migrations --breakpoints --schema=./src/db/schema.ts",
+    "db:migrate": "bun run scripts/migrate.ts",
+    "db:seed": "bun run seeds/todos.ts",
+    "studio": "drizzle-kit studio --port 3333 --config=./src/config/drizzle.config.ts"
   },
   "dependencies": {
     "@elysiajs/html": "^0.7.3",
